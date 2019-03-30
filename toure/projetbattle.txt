@@ -1,0 +1,13 @@
+                            
+
+                      Pour le projet de fin battle
+
+
+Réaliser un jeu de carte avec les fonctionnalités suivantes :
+
+1- les cartes présentent le dos de la carte
+2- au clique d'une carte la face apparait
+3- si deux cartes sont identiques le joueur gagne
+4- Prevoir un bouton pour mélanger les cartes de façon aléatoire
+
+

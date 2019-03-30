@@ -1,0 +1,108 @@
+<!-- BISMILAHI RAHMANI RAHIM
+	ALAHOUMA SOLI ALA MOUHALIMANA MOUHALIMA AL-BACHARIYA SOLAWATOU RABI ALEY-HI WA ALA ALI-HI WA SALIM
+ -->
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Jeux de carte</title>
+</head>
+<body>
+
+	<!-- /*
+                      Pour le projet de fin battle
+
+
+RŽaliser un jeu de carte avec les fonctionnalitŽs suivantes :
+
+1- les cartes prŽsentent le dos de la carte
+2- au clique d'une carte la face apparait  : au clique on affiche toute les carte
+3- si deux cartes sont identiques le joueur gagne
+4- Prevoir un bouton pour mŽlanger les cartes de faon alŽatoire
+
+*/ -->
+
+	<!-- Début du projet -->
+
+	<button id="melange" onclick="retourner()" style="color:red; padding:50px; background: orange; font-size: 20px">
+		Melanger Carte
+	</button>
+	<br>
+	<br>
+	<br>
+	<div>
+		<div id="carteAffichage" style="display: flex;">
+			<img id="carte1" src="dos.png" onclick="affichCarte()">
+			<img id="carte2" src="dos.png" onclick="affichCarte()">
+			<img id="carte3" src="dos.png" onclick="affichCarte()">
+		</div>
+	</div>
+<br>
+	<br><br>
+	<br><br>
+	<br><br>
+	<br>
+
+	<button id="info" style="color:red; padding:50px; background: orange; font-size: 20px"></button>
+	<br>
+	<br>
+
+<script type="text/javascript">
+	var tab = ["coeur","pique","treffe","coeur2"];
+
+	var carteOutirer = ["coeur","pique","treffe","coeur2", "coeur","pique","treffe","coeur2" , "coeur","pique","treffe","coeur2" , "coeur","pique","treffe","coeur2"]
+	
+	var carteCompare = [];
+
+function affichCarte(){
+	//melanger un tableau 
+
+for(var position=tab.length-1; position>=1; position--){
+	//hasard reçoit un nombre entier aléatoire entre 0 et position
+	var hasard=Math.floor(Math.random()*(position+1));
+
+	
+	//La carte tirer par hasard
+	var carteActuelle = "carte"+position;
+	var carteTirer = carteOutirer[hasard];
+
+	//affection de la carte tirer
+	var carte = document.getElementById("carte"+position);
+	carte.src=  carteTirer + ".png";
+
+	carteCompare.push(carte.src);
+	//Stocage du chemin dans un div
+	//alert(carteTirer)
+	
+ }
+
+//alert(carteCompare)
+var victoire = document.getElementById("info");
+	if(carteCompare[0] == carteCompare[1] || carteCompare[0] == carteCompare[2] || carteCompare[2] == carteCompare[1] ){
+
+		victoire.innerHTML = "Victoire 👏👏👏"
+		
+		}else{
+			victoire.innerHTML = "Vous avez perdu 🤭🤭🤭🤭🤭"
+		}
+	
+	
+
+}// fin fonction
+
+
+//Retourner la carte
+function retourner(){
+for(var position=tab.length-1; position>=1; position--){
+
+	var carte = document.getElementById("carte"+position);
+	carte.src= "dos" + ".png";
+
+ }
+
+}
+
+</script>
+
+</body>
+</html>
